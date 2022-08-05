@@ -1,0 +1,12 @@
+{
+  "resourceName": "s3bpasseterpstoraged0d57893",
+  "bucketName": "bpasseterp-storage-d0d57893",
+  "policyUUID": "e5918cc9",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}

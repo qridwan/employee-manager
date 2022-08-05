@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { Auth } from 'aws-amplify';
 import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { alpha } from '@mui/material/styles';
@@ -32,7 +33,8 @@ const MENU_OPTIONS = [
 
 export default function AccountPopover() {
   const anchorRef = useRef(null);
-
+  const name = Auth?.user?.attributes.email.split('@')[0];
+  const email = Auth?.user?.attributes.email;
   const [open, setOpen] = useState(null);
 
   const handleOpen = (event) => {
@@ -43,6 +45,13 @@ export default function AccountPopover() {
     setOpen(null);
   };
 
+  const handleSignout = async () => {
+    try {
+      await Auth.signOut();
+    } catch (error) {
+      console.log('error signing out: ', error);
+    }
+  };
   return (
     <>
       <IconButton
@@ -82,10 +91,10 @@ export default function AccountPopover() {
       >
         <Box sx={{ my: 1.5, px: 2.5 }}>
           <Typography variant="subtitle2" noWrap>
-            {account.displayName}
+            {name}
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
-            {account.email}
+            {email}
           </Typography>
         </Box>
 
@@ -101,7 +110,7 @@ export default function AccountPopover() {
 
         <Divider sx={{ borderStyle: 'dashed' }} />
 
-        <MenuItem onClick={handleClose} sx={{ m: 1 }}>
+        <MenuItem onClick={handleSignout} sx={{ m: 1 }}>
           Logout
         </MenuItem>
       </MenuPopover>

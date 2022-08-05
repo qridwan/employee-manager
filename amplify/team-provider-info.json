@@ -1,0 +1,26 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bpasseterp-staging-93408-authRole",
+      "UnauthRoleArn": "arn:aws:iam::167664173845:role/amplify-bpasseterp-staging-93408-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::167664173845:role/amplify-bpasseterp-staging-93408-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-bpasseterp-staging-93408-deployment",
+      "UnauthRoleName": "amplify-bpasseterp-staging-93408-unauthRole",
+      "StackName": "amplify-bpasseterp-staging-93408",
+      "StackId": "arn:aws:cloudformation:us-east-2:167664173845:stack/amplify-bpasseterp-staging-93408/974e2ce0-13d8-11ed-ab67-0689d97dfca0",
+      "AmplifyAppId": "d3syusvwmngzk4"
+    },
+    "categories": {
+      "auth": {
+        "bpAssetERP": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3syusvwmngzk4",
+          "type": "manual"
+        }
+      }
+    }
+  }
+}
